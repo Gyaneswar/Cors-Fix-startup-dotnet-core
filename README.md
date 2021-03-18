@@ -12,19 +12,19 @@
             IMapper mapper = mappingConfig.CreateMapper();
             services.AddSingleton(mapper);
             services.AddSingleton<QuickKartRepo>(new QuickKartRepo(new QuickKartDBContext(new DbContextOptions<QuickKartDBContext>())));
+           
+   ##inside cofigureServices add this code
             
-            ##inside cofigureServices add this code
-            
-            ```
-            services.AddCors(options =>
-            {
-                options.AddPolicy(name: MyAllowSpecificOrigins,
-                                  builder =>
-                                  {
-                                      builder.WithOrigins("http://localhost:4200");
-                                  });
-            });
-            ```
+   ```
+   services.AddCors(options =>
+   {
+       options.AddPolicy(name: MyAllowSpecificOrigins,
+                         builder =>
+                         { 
+                             builder.WithOrigins("http://localhost:4200");
+                         });
+   });
+   ```
 
             services.AddControllers();
            
