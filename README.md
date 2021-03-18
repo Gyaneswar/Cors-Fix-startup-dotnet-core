@@ -1,7 +1,6 @@
 # Cors-Fix-startup-dotnet-core-web-api
 
-           
-   ##inside cofigureServices add this code
+##inside cofigureServices add this code
             
    ```
    services.AddCors(options =>
@@ -13,10 +12,7 @@
                          });
    });
    ```
-
-
-
-   ##after app.UseRouting() in configure method add this line
+##after app.UseRouting() in configure method add this line
    
    ```
    app.UseCors(MyAllowSpecificOrigins);
