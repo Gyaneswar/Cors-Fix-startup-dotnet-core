@@ -13,7 +13,9 @@
             services.AddSingleton(mapper);
             services.AddSingleton<QuickKartRepo>(new QuickKartRepo(new QuickKartDBContext(new DbContextOptions<QuickKartDBContext>())));
             
-            #inside cofigureServices
+            ##inside cofigureServices add this code
+            
+            ```
             services.AddCors(options =>
             {
                 options.AddPolicy(name: MyAllowSpecificOrigins,
@@ -22,6 +24,7 @@
                                       builder.WithOrigins("http://localhost:4200");
                                   });
             });
+            ```
 
             services.AddControllers();
            
@@ -39,7 +42,10 @@
 
             app.UseRouting();
 
+            ##after app.UseRouting() add this line
+            ```
             app.UseCors(MyAllowSpecificOrigins);
+            ```
 
             app.UseAuthorization();
 
