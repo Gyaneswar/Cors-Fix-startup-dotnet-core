@@ -1,4 +1,4 @@
-# Cors-Fix-startup-dotnet-core
+# Cors-Fix-startup-dotnet-core-web-api
 
            
    ##inside cofigureServices add this code
