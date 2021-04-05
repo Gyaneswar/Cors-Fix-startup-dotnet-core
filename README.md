@@ -1,6 +1,6 @@
 # Cors-Fix-startup-dotnet-core-web-api
 
-##inside cofigureServices add this code
+##inside cofigureServices add this code. And change the link accordingly.
             
    ```
    services.AddCors(options =>
